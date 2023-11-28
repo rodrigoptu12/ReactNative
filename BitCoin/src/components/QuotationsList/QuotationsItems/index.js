@@ -19,7 +19,7 @@ export default function QuotationsItems(props) {
 
 
       <View style={styles.contextRigth}>
-        <Text style={styles.price}>{props.valor}</Text>
+        <Text style={styles.price}>R${props.valor}</Text>
       </View>
 
 

@@ -1,5 +1,11 @@
 import React, { Fragment, useState } from "react";
-import { ScrollView, Text, View, TouchableOpacity, FlatList } from "react-native";
+import {
+  ScrollView,
+  Text,
+  View,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
 import styles from "./styles";
 import QuotationsItems from "./QuotationsItems";
 export default function QuotationsList(props) {
@@ -13,8 +19,6 @@ export default function QuotationsList(props) {
         <Text style={styles.textButtonQuery}>{props.text}</Text>
       </TouchableOpacity>
     );
-
-
   };
   return (
     <Fragment>
@@ -25,18 +29,17 @@ export default function QuotationsList(props) {
         <ButtonQuery text="3M" days={91} />
         <ButtonQuery text="6M" days={181} />
       </View>
-      <ScrollView>
+      {/* <ScrollView> */}
         <View>
-        <FlatList
-          data={props.listTransactions}
-          renderItem={({ item }) => (
-            <QuotationsItems data={item.data} valor={item.valor} />
-          )}
-          keyExtractor={(item) => item.valor}
-        />
+          <FlatList
+            data={props.listTransactions}
+            renderItem={({ item }) => (
+              <QuotationsItems data={item.data} valor={item.valor} />
+            )}
+            keyExtractor={(item) => item.valor}
+          />
         </View>
-      </ScrollView>
-
+      {/* </ScrollView> */}
     </Fragment>
   );
 }
